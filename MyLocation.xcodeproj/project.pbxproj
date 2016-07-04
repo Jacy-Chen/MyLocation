@@ -196,6 +196,7 @@
 				TargetAttributes = {
 					6803E6411D29F9E700B4F1E3 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 2V8Q7UCZ6V;
 					};
 					6803E6571D29F9E700B4F1E3 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -405,10 +406,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MyLocation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacy.MyLocation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -416,10 +420,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MyLocation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacy.MyLocation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -488,6 +495,7 @@
 				6803E66E1D29F9E700B4F1E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6803E66F1D29F9E700B4F1E3 /* Build configuration list for PBXNativeTarget "MyLocationTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +504,7 @@
 				6803E6711D29F9E700B4F1E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6803E6721D29F9E700B4F1E3 /* Build configuration list for PBXNativeTarget "MyLocationUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +513,7 @@
 				6803E6741D29F9E700B4F1E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
