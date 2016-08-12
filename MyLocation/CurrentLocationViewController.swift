@@ -135,9 +135,18 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
                     self.lastLocationError = error //within the closure, the 'self' key word is a must
                     
                     //update mark
-                    if error == nil && !(placeMarks?.isEmpty)! {
-                        self.placeMark = (placeMarks?.last)! as CLPlacemark
-                    } else  {
+//                    if error == nil && !(placeMarks?.isEmpty)! {
+//                        self.placeMark = (placeMarks?.last)! as CLPlacemark
+//                    } else  {
+//                        self.placeMark = nil
+//                    }
+                    
+                    if error == nil, let p = placeMarks where !p.isEmpty
+                    {
+                        self.placeMark = p.last!
+                    }
+                    else
+                    {
                         self.placeMark = nil
                     }
                     
@@ -172,9 +181,26 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         alert.addAction(okAction)
     }
     
-    func stringFromPlacemark(placemark: CLPlacemark) ->String {
-        return  "\(placemark.subThoroughfare) \(placemark.thoroughfare)\n" +
-                "\(placemark.locality) \(placemark.administrativeArea) \(placemark.postalCode)"
+    func stringFromPlacemark(placemark: CLPlacemark) -> String { // 1
+        var line1 = ""
+        // 2
+        if let s = placemark.subThoroughfare { line1 += s + " "
+        }
+        // 3
+        if let s = placemark.thoroughfare { line1 += s
+        }
+        // 4
+        var line2 = ""
+        if let s = placemark.locality { line2 += s + " "
+        }
+        if let s = placemark.administrativeArea {
+            line2 += s + " "
+            
+        }
+        if let s = placemark.postalCode {
+            line2 += s }
+        // 5
+        return line1 + "\n" + line2
     }
     
     func updateLabels() {
@@ -229,8 +255,8 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
             updatingLocation = true
-            
-            timer = NSTimer.scheduledTimerWithTimeInterval(60, target: self, selector: Selector(didTimeOut()), userInfo: nil, repeats: false)
+            timer = NSTimer.scheduledTimerWithTimeInterval(60, target: self, selector: #selector(CurrentLocationViewController.didTimeOut), userInfo: nil, repeats: false)
+//            timer = NSTimer.scheduledTimerWithTimeInterval(6000, target: self, selector: Selector(didTimeOut()), userInfo: nil, repeats: false)
             
         }
     }
