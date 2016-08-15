@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A4418E01D5D99D00095DBD0 /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4418DF1D5D99D00095DBD0 /* LocationDetailViewController.swift */; };
+		4A4418E21D5E55A40095DBD0 /* CategoryPickerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4418E11D5E55A40095DBD0 /* CategoryPickerTableViewController.swift */; };
+		4A4418E41D5E832C0095DBD0 /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4418E31D5E832C0095DBD0 /* HudView.swift */; };
+		4AD5ACFA1D62595D0023AC4B /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD5ACF91D62595D0023AC4B /* Functions.swift */; };
 		6803E6461D29F9E700B4F1E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6803E6451D29F9E700B4F1E3 /* AppDelegate.swift */; };
 		6803E6481D29F9E700B4F1E3 /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6803E6471D29F9E700B4F1E3 /* CurrentLocationViewController.swift */; };
 		6803E64A1D29F9E700B4F1E3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6803E6491D29F9E700B4F1E3 /* SecondViewController.swift */; };
@@ -35,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A4418DF1D5D99D00095DBD0 /* LocationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
+		4A4418E11D5E55A40095DBD0 /* CategoryPickerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryPickerTableViewController.swift; sourceTree = "<group>"; };
+		4A4418E31D5E832C0095DBD0 /* HudView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
+		4AD5ACF91D62595D0023AC4B /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		6803E6421D29F9E700B4F1E3 /* MyLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6803E6451D29F9E700B4F1E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6803E6471D29F9E700B4F1E3 /* CurrentLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +84,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A4418E51D5E83360095DBD0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6803E6471D29F9E700B4F1E3 /* CurrentLocationViewController.swift */,
+				4A4418DF1D5D99D00095DBD0 /* LocationDetailViewController.swift */,
+				4A4418E11D5E55A40095DBD0 /* CategoryPickerTableViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
 		6803E6391D29F9E700B4F1E3 = {
 			isa = PBXGroup;
 			children = (
@@ -100,12 +118,14 @@
 			isa = PBXGroup;
 			children = (
 				6803E6451D29F9E700B4F1E3 /* AppDelegate.swift */,
-				6803E6471D29F9E700B4F1E3 /* CurrentLocationViewController.swift */,
-				6803E6491D29F9E700B4F1E3 /* SecondViewController.swift */,
+				4A4418E51D5E83360095DBD0 /* ViewController */,
+				4A4418E31D5E832C0095DBD0 /* HudView.swift */,
+				4AD5ACF91D62595D0023AC4B /* Functions.swift */,
 				6803E64B1D29F9E700B4F1E3 /* Main.storyboard */,
 				6803E64E1D29F9E700B4F1E3 /* Assets.xcassets */,
 				6803E6501D29F9E700B4F1E3 /* LaunchScreen.storyboard */,
 				6803E6531D29F9E700B4F1E3 /* Info.plist */,
+				6803E6491D29F9E700B4F1E3 /* SecondViewController.swift */,
 			);
 			path = MyLocation;
 			sourceTree = "<group>";
@@ -196,7 +216,7 @@
 				TargetAttributes = {
 					6803E6411D29F9E700B4F1E3 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 2V8Q7UCZ6V;
+						DevelopmentTeam = U774BHV4DS;
 					};
 					6803E6571D29F9E700B4F1E3 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -260,8 +280,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A4418E01D5D99D00095DBD0 /* LocationDetailViewController.swift in Sources */,
 				6803E64A1D29F9E700B4F1E3 /* SecondViewController.swift in Sources */,
+				4A4418E41D5E832C0095DBD0 /* HudView.swift in Sources */,
+				4AD5ACFA1D62595D0023AC4B /* Functions.swift in Sources */,
 				6803E6461D29F9E700B4F1E3 /* AppDelegate.swift in Sources */,
+				4A4418E21D5E55A40095DBD0 /* CategoryPickerTableViewController.swift in Sources */,
 				6803E6481D29F9E700B4F1E3 /* CurrentLocationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +433,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MyLocation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacy.MyLocation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -423,6 +448,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MyLocation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jacy.MyLocation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
