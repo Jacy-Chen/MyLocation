@@ -8,11 +8,15 @@
 
 import UIKit
 import CoreLocation
+import CoreData
 
 
 class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate {
     
-    // MARK: IB Property
+	var managedObjectContext: NSManagedObjectContext!
+
+
+	// MARK: IB Property
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var latitudeLabel: UILabel!
     @IBOutlet weak var longtitudeLabel: UILabel!
@@ -159,10 +163,12 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
 		// Get the new view controller using segue.destinationViewController.
 		// Pass the selected object to the new view controller.
 		if segue.identifier == "TagLocation" {
+			didTimeOut()
 			let navigationController = segue.destinationViewController as! UINavigationController
 			let controller = navigationController.topViewController as! LocationDetailViewController
 			controller.coordinate = location!.coordinate
 			controller.placemark = placeMark
+			controller.managedObjectContext = managedObjectContext
 		}
 
 	}

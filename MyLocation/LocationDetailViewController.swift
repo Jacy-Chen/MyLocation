@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import CoreData
 
 private let dateFormatter:NSDateFormatter = {
 		let formatter = NSDateFormatter()
@@ -17,6 +18,14 @@ private let dateFormatter:NSDateFormatter = {
 }()
 
 class LocationDetailViewController: UITableViewController {
+
+
+	var date = NSDate()
+	var managedObjectContext: NSManagedObjectContext!
+	let appDelegate = UIApplication.sharedApplication().delegate
+		as! AppDelegate
+//	let context = appDelegate.managedObjectContext
+
 
 	@IBOutlet weak var descriptionTextView: UITextView!
 	@IBOutlet weak var categoryLabel: UILabel!
@@ -49,7 +58,7 @@ class LocationDetailViewController: UITableViewController {
 			addressLabel.text = "No Address Found"
 		}
 
-		dateLabel.text = formatDate(NSDate())
+		dateLabel.text = formatDate(date)
 
 		//init 接收两种gestureHandler函数的格式，其中一种可以接受gesture
 		let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LocationDetailViewController.hideKeyboard(_:)))
@@ -110,13 +119,29 @@ class LocationDetailViewController: UITableViewController {
 		let hudView = HudView.hudInView((navigationController?.view)!, animated: true)
 		hudView.text = "Tagged"
 
-		let delayInSeconds = 0.6
-		let when = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)))
+		// 1 获取数据库CoreDate框架
+		let location = NSEntityDescription.insertNewObjectForEntityForName("Location", inManagedObjectContext: managedObjectContext) as! Location
 
-		afterDelay(0.6, closure: {
+		// 2 存储数据
+		location.locationDescription = descriptionTextView.text
+		location.category = categoryName
+		location.latitude = coordinate.latitude
+		location.longitude = coordinate.longitude
+		location.date = date
+		location.placemark = placemark
+
+		// 3
+		do {
+			try managedObjectContext.save()
+		} catch {
+			fatalCoreDataError(error)
+			return
+//			fatalError("Error: \(error)")
+		}
+
+		afterDelay(0.6) {
 			self.dismissViewControllerAnimated(true, completion: nil)
-		})
-
+		}
 	}
 
 	@IBAction func cancel() {
